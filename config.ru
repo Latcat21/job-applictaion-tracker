@@ -1,8 +1,10 @@
 require 'sinatra/base'
 
-#controller
+#Controllers
 require './controllers/ApplicationController'
 
+#Models
+require './models/JobModel'
 #routing
 map('/'){
   run ApplicationController
