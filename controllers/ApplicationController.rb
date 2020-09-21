@@ -2,8 +2,19 @@ class ApplicationController < Sinatra::Base
   require 'bundler'
   Bundler.require()
 
-  #Directing to views folder
+  #DB connection
+  ActiveRecord::Base.establish_connection(
+    :adapter => 'postgresql',
+    :database => 'application_tracker'
+  )
+
+  #templates
   set :views, File.expand_path('../../views', __FILE__)
+
+  #static assests
+  set :public_dir, File.expand_path('../../public', __FILE__)
+
+
 
   get '/' do
     return 'hello'
