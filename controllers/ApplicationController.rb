@@ -4,14 +4,18 @@ class ApplicationController < Sinatra::Base
 
 
 
-    #enable sessions
-    enable :sessions
+  #enable sessions
+  enable :sessions
 
   #DB connection
   ActiveRecord::Base.establish_connection(
     :adapter => 'postgresql',
     :database => 'application_tracker'
   )
+
+  #rack middleware
+  use Rack::MethodOverride
+  set :method_overide, true
 
   #templates
   set :views, File.expand_path('../../views', __FILE__)

@@ -7,6 +7,10 @@
   <% @jobs.each do |job|%>
   <li>title: <%= job.title %> </li>
   <li> description: <%= job.description %></li>
+  <form action="/jobs/<%=job.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+  </form>
 </ul>
 
   <%end%>

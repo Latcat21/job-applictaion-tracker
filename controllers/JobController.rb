@@ -37,5 +37,10 @@ class JobController < ApplicationController
   #update
 
   #delete
+  delete "/:id" do
+    job = Job.find params[:id]
+    job.destroy
+    redirect '/jobs'
+  end
 
 end
