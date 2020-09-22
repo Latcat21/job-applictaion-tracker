@@ -34,7 +34,11 @@ class ApplicationController < Sinatra::Base
     some_text = "test text variable"
     binding.pry
     "pry has finished -- here's some_text #{some_text}"
+  end
 
+  #404 route
+  get '*' do
+    erb :error_page
   end
 
   
