@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
 
 
-<body>
 <ul>
   <% @jobs.each do |job|%>
-  <li>title: <%= job.title %> </li>
-  <li> description: <%= job.description %></li>
+  <li>Company: <%= job.company %> </li>
+  <li> Job Title: <%= job.title %></li>
+  <li> Job Description: <%= job.description %></li>
+  <li> Date Applied: <%= job.date %></li>
   <form action="/jobs/<%=job.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <button>Delete</button>
@@ -15,5 +14,3 @@
 </ul>
 
   <%end%>
-</body>
-</html>

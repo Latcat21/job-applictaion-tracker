@@ -8,5 +8,5 @@ CREATE TABLE jobs(
   company TEXT,
   title TEXT,
   description TEXT,
-  date TEXT
+  date DATE
 );

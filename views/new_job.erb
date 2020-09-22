@@ -8,10 +8,10 @@
 <input type="text" name="title"/>
 <br>
 <label for="description">Description</label>
-<input type="text" name="description"/>
+<textarea type="text" name="description" rows="5"></textarea>
 <br>
-<label for="date">Date</label>
-<input type="text" name="date"/>
+<label >Date:</label>
+        <input type="date"  name="date" value="<%= Date.today %> "min="<%= Date.today %> %" max="2022-12-31" required>
 <br>
 <input type="submit"/>
 
