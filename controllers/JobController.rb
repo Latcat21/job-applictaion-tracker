@@ -12,8 +12,6 @@ class JobController < ApplicationController
     erb :new_job
   end
 
-  
-
   #create
   post '/' do
     new_job = Job.new
@@ -27,14 +25,30 @@ class JobController < ApplicationController
 
   end
 
+  #show
+  get '/:id' do
+    @job = Job.find params[:id]
+    erb :job_show
+  end
+
   #Edit
-  get ':id/edit' do
-    @job = Job.find by params[:id]
+  get '/:id/edit' do
+    @job = Job.find params[:id]
 
     erb :job_edit
   end
 
   #update
+  put '/:id' do
+    job = Job.find params[:id]
+    job.company = params[:company]
+    job.title = params[:title]
+    job.description = params[:description]
+    job.date = params[:date]
+    job.save
+
+    redirect '/jobs'
+  end
 
   #delete
   delete "/:id" do
