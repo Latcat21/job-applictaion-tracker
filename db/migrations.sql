@@ -5,6 +5,7 @@ CREATE DATABASE application_tracker;
 
 CREATE TABLE jobs(
   id SERIAL PRIMARY KEY,
+  company TEXT,
   title TEXT,
   description TEXT,
   date TEXT

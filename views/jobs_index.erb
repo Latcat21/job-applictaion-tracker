@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+<ul>
+  <% @jobs.each do |job|%>
+  <li>title: <%= job.title %> </li>
+  <li> description: <%= job.description %></li>
+</ul>
+
+  <%end%>
+</body>
+</html>
