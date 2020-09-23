@@ -1,7 +1,16 @@
 class UserController < ApplicationController
+   
   
-  get '/' do
-    return "<h1> hello </h1>"
-  end
-  
+get '/login' do
+  erb :login
+end
+
+
+
+get '/register' do
+  erb :register
+end
+
+
+
 end

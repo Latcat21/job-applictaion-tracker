@@ -1,7 +1,5 @@
 require 'sinatra/base'
 
-
-
 #Controllers
 require './controllers/ApplicationController'
 require './controllers/JobController'
@@ -18,6 +16,6 @@ map('/'){
 map('/jobs'){
   run JobController
 }
-map('/auth'){
+map('/users'){
   run UserController
 }
