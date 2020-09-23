@@ -7,11 +7,17 @@
 <body>
 <header>
 <nav>
+<a href="/">Home</a>
 <a href="/jobs">Jobs Index</a>
 |
 <a href="/jobs/new">Add a new job</a>
 </nav>
 </header>
+<% if session[:message]%>
+<p class="message <%= session[:message][:status] %>"><%= session[:message][:message] %></p>
+<% 
+end
+ session[:message] = nil %>
 <%= yield %>
 
 </body>

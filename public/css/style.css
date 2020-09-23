@@ -5,3 +5,18 @@ body {
 body>h1 {
   color: white
 }
+
+.message.good {
+  background-color: lightgreen;
+  border: 2px solid green;
+}
+
+.message.bad {
+  background-color: pink;
+  border: 2px solid red;
+}
+
+.message.neutral {
+  background-color: blue;
+  border: 2px solid blue;
+}

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 
+
 #Controllers
 require './controllers/ApplicationController'
 require './controllers/JobController'

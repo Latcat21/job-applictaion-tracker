@@ -21,6 +21,11 @@ class JobController < ApplicationController
     new_job.date = params[:date]
     new_job.save
 
+    session[:message] = {
+      success: true,
+      status: "good",
+      message: "Successfully add job ##{new_job.id}"
+    }
     redirect '/jobs'
 
   end
@@ -47,6 +52,12 @@ class JobController < ApplicationController
     job.date = params[:date]
     job.save
 
+    session[:message] ={
+      success: true,
+      status: "good",
+      message: "Succesfully updated job ##{job.id}"
+    }
+
     redirect '/jobs'
   end
 
@@ -54,6 +65,13 @@ class JobController < ApplicationController
   delete "/:id" do
     job = Job.find params[:id]
     job.destroy
+
+    session[:message] ={
+      success: true,
+      status: "good",
+      message: "Succesfully deleted job ##{job.id}"
+    }
+
     redirect '/jobs'
   end
 

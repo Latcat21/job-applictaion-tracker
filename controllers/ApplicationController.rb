@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     :database => 'application_tracker'
   )
 
-  #rack middleware
+  #Rack middleware
   use Rack::MethodOverride
   set :method_overide, true
 
