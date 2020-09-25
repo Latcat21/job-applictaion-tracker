@@ -1,6 +1,5 @@
 class UserController < ApplicationController
    
-  
   get '/login' do
     erb :login
   end
@@ -42,21 +41,21 @@ class UserController < ApplicationController
 
     #if the user doesn't exists
     if !user
-    user = User.new
-    user.username = params[:username]
-    user.password = params[:password]
-    user.save
+      user = User.new
+      user.username = params[:username]
+      user.password = params[:password]
+      user.save
 
-    session[:logged_in] = true
-    session[:username] = user.username
+      session[:logged_in] = true
+      session[:username] = user.username
 
-    session[:message] = {
-      success: true,
-      status: 'good',
-      message: "Welcome to the site, you are now logged in as #{user.username}"
-    }
+      session[:message] = {
+        success: true,
+        status: 'good',
+        message: "Welcome to the site, you are now logged in as #{user.username}"
+      }
     
-    redirect '/jobs'
+     redirect '/jobs'
 
     else
 
@@ -68,6 +67,7 @@ class UserController < ApplicationController
     #redirect to register so they can try again
     redirect '/users/register'
     end
+
   end
 
   get '/logout' do
