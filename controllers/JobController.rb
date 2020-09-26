@@ -3,7 +3,7 @@ class JobController < ApplicationController
     if !session[:logged_in]
       session[:message] = {
         success: false,
-        status: "bad",
+        status: "neutral",
         message: "You must bee logged in"
 
       }
