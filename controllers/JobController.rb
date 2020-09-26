@@ -1,5 +1,15 @@
 class JobController < ApplicationController
+  before do
+    if !session[:logged_in]
+      session[:message] = {
+        success: false,
+        status: "bad",
+        message: "You must bee logged in"
 
+      }
+      redirect '/users/register'
+    end
+  end
 
   #index
   get '/' do

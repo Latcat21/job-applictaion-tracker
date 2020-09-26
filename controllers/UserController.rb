@@ -6,9 +6,10 @@ class UserController < ApplicationController
 
   post '/login' do
     user = User.find_by username: params[:username]
+    pw = params[:password]
     
-    if user && user.password == params[:password]
-  
+    if user && user.authenticate(pw)
+      
       session[:logged_in] = true
       session[:username] = user.username
       session[:message] = {
