@@ -1,6 +1,7 @@
 
 
 <ul>
+
   <% @jobs.each do |job|%>
   <li>Company: <%= job.company %> </li>
   <li> Job Title: <%= job.title %></li>
@@ -14,4 +15,5 @@
   <a href="/jobs/<%=job.id %>">View</a>
 </ul>
 
+ 
   <%end%>

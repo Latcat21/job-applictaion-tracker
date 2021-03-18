@@ -13,7 +13,10 @@ class JobController < ApplicationController
 
   #index
   get '/' do
-    @jobs = Job.all
+    user = User.find_by({ :username => session[:username]})
+    
+    @jobs = user.jobs
+   
     erb :jobs_index
   end
 
@@ -25,10 +28,12 @@ class JobController < ApplicationController
   #create
   post '/' do
     new_job = Job.new
+    logged_in_user = User.find_by({ :username => session[:username]})
     new_job.company = params[:company]
     new_job.title = params[:title]
     new_job.description = params[:description]
     new_job.date = params[:date]
+    new_job.user_id = logged_in_user.id
     new_job.save
 
     session[:message] = {
