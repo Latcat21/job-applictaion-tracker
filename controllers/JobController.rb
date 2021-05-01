@@ -89,5 +89,8 @@ class JobController < ApplicationController
 
     redirect '/jobs'
   end
+ 
+   
 
+  
 end
